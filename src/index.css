@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Nunito', 'Manrope', system-ui, -apple-system, sans-serif;
+    
+    /* Sentence Parts (Gap bo‘laklari) Semantic System */
+    --color-ega: #2563eb; /* Ega / Подлежащее - Royal Blue */
+    --color-kesim: #dc2626; /* Kesim / Сказуемое - Vivid Red/Crimson */
+    --color-toldiruvchi: #0d9488; /* To‘ldiruvchi / Дополнение - Deep Teal */
+    --color-aniqlovchi: #16a34a; /* Aniqlovchi / Определение - Forest Green */
+    --color-hol: #d97706; /* Hol / Обстоятельство - Warm Amber */
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+/* Syntax Annotation Underline Styles (Universal Color-Blind Accessible) */
+/* Ega: bitta to‘g‘ri chiziq (solid 2px) */
+.syntax-ega {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 2.5px;
+  text-underline-offset: 4px;
+  text-decoration-color: #2563eb;
+}
+
+/* Kesim: ikkita to‘g‘ri chiziq (double 3px) */
+.syntax-kesim {
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+  text-decoration-color: #dc2626;
+}
+
+/* To‘ldiruvchi: uzuq-yuluq chiziq (dashed 2px) */
+.syntax-toldiruvchi {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 2.5px;
+  text-underline-offset: 4px;
+  text-decoration-color: #0d9488;
+}
+
+/* Aniqlovchi: to‘lqinsimon chiziq (wavy 2px) */
+.syntax-aniqlovchi {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: #16a34a;
+}
+
+/* Hol: nuqta-chiziq (dotted 3px) */
+.syntax-hol {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+  text-decoration-color: #d97706;
+}
+
+/* Print Styles for /ustoz worksheet printable mode */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
